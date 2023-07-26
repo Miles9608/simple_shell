@@ -61,7 +61,7 @@ char **strtow2(char *str, char d)
 
 	if (str == NULL || str[0] == 0)
 		return (NULL);
-	for (i = 0; str[miles] != '\0'; miles++)
+	for (miles = 0; str[miles] != '\0'; miles++)
 		if ((str[miles] != d && str[miles + 1] == d) ||
 		    (str[miles] != d && !str[miles + 1]) || str[miles + 1] == d)
 			numwords++;
