@@ -27,7 +27,7 @@ char **strtow(char *str, char *d)
 		return (NULL);
 	for (miles = 0, j = 0; j < numwords; j++)
 	{
-		while (is_delim(str[i], d))
+		while (is_delim(str[miles], d))
 			miles++;
 		k = 0;
 		while (!is_delim(str[miles + k], d) && str[miles + k])

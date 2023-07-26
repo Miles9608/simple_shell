@@ -68,7 +68,7 @@ int find_builtin(info_t *info)
 	};
 
 	for (miles = 0; builtintbl[miles].type; miles++)
-		if (_strcmp(info->argv[0], builtintbl[i].type) == 0)
+		if (_strcmp(info->argv[0], builtintbl[miles].type) == 0)
 		{
 			info->line_count++;
 			built_in_ret = builtintbl[miles].func(info);
@@ -108,7 +108,7 @@ void find_cmd(info_t *info)
 	}
 	else
 	{
-		if ((interactive(info) || _getenv(milesnfo, "PATH=")
+		if ((interactive(info) || _getenv(info, "PATH=")
 			|| info->argv[0][0] == '/') && is_cmd(info, info->argv[0]))
 			fork_cmd(info);
 		else if (*(info->arg) != '\n')
